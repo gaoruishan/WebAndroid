@@ -1,0 +1,7 @@
+<!--在build中切换:对应包名清单中package和启动图片splash-->
+<!--<app appid="HelloH5" appver=""/>-->
+<hbuilder version="1.9.9.58821">
+<apps>
+    <app appid="com.grs.oldsland" appver=""/>
+</apps>
+</hbuilder>

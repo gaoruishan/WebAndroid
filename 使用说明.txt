@@ -1,0 +1,24 @@
+
+1,app下的assets为资源包
+    apps: 对应多个项目
+    data: 重要的文件dcloud_control.xml
+          1)进行修改appid
+          2)对应包名清单中package一致
+          3)启动图片splash替换
+
+
+2, 自定义APK输出配置
+applicationVariants.all { variant ->
+        variant.outputs.all{ output ->
+            def outputFile = output.outputFile
+            if(outputFile!= null && outputFile.name.endsWith('.apk')) {
+             // 输出apk名称为com_biniusports_app_bnsports_v1.0.0_20171205_baidu.apk
+ def fileName = "com_biniusports_app_bnsports_v${defaultConfig.versionName}_${getNowTime()}_${variant.productFlavors[0].name}.apk"
+             outputFileName= fileName
+           }
+     }
+}
+
+
+3,打包:在当前目录Terminal 输入./build_android.sh.sh, 再输入需要打包包名
+  过滤日志: 在当前目录Terminal 输入./log_package.sh 包名  即可过滤log日志
